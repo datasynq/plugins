@@ -21,6 +21,10 @@
     "build": "rm -rf dist && rollup -c",
     "prepare": "npm run build"
   },
+  "dependencies": {
+    "ansi-colors": "4.1.1",
+    "googleapis": "55.0.0"
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "14.0.0",
     "@rollup/plugin-node-resolve": "8.4.0",

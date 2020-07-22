@@ -1,8 +1,8 @@
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
-// import { builtinModules } from 'module'
-// import { dependencies } from './package.json'
+import { builtinModules } from 'module'
+import { dependencies } from './package.json'
 
 const { NODE_ENV } = process.env
 const prod = NODE_ENV === 'production'
@@ -13,7 +13,7 @@ export default {
 		file: 'dist/index.js',
 		format: 'cjs',
 	},
-	// external: [...builtinModules, ...Object.keys(dependencies)],
+	external: [...builtinModules, ...Object.keys(dependencies)],
 	plugins: [
 		resolve(),
 		commonjs(),
